@@ -3,7 +3,7 @@
 //  Reveil
 //
 //  Created by Marian PAUL on 10/03/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 iPuP SARL. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -23,6 +23,15 @@
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Notification"
+                                                    message:notification.alertBody
+                                                   delegate:nil
+                                          cancelButtonTitle:notification.alertAction
+                                          otherButtonTitles:nil];
+    [alert show];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
